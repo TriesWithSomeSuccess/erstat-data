@@ -1,0 +1,29 @@
+name: Monthly snapshot
+
+on:
+  schedule:
+    - cron: "17 9 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Pull snapshot
+        env:
+          ERSTAT_API_KEY: ${{ secrets.ERSTAT_API_KEY }}
+        run: node scripts/snapshot.mjs
+      - name: Commit
+        run: |
+          git config user.name "Jason Turnbull"
+          git config user.email "jasonturnbull25@gmail.com"
+          git add data latest
+          git diff --cached --quiet || git commit -m "snapshot: $(date -u +%Y-%m-%d)"
+          git push
