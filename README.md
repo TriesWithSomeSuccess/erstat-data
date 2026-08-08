@@ -1,5 +1,7 @@
 # Canadian ER Closures & Service Disruptions
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21853002.svg)](https://doi.org/10.5281/zenodo.21853002)
+
 Monthly point-in-time snapshots of Canadian emergency-room closures, reopenings and service disruptions, plus per-province counts of ERs publishing live wait times. Collected continuously by [ERstat](https://erstat.ca) from official health-authority sources across all provinces. No government or agency publishes this as one national record.
 
 **Canonical dataset page (access, formats, citations): [erstat.ca/data](https://erstat.ca/data)**
@@ -12,7 +14,7 @@ data/snapshots/YYYY-MM-DD/coverage.csv   Per-province ER counts + live wait repo
 latest/                                  Most recent snapshot (same files)
 ```
 
-Snapshots are taken monthly by a scheduled GitHub Action calling the free [ERstat API](https://erstat.ca/developers).
+Snapshots are taken monthly by a scheduled GitHub Action calling the free [ERstat API](https://erstat.ca/developers). Each snapshot is also archived on Zenodo as a new version under [DOI 10.5281/zenodo.21853002](https://doi.org/10.5281/zenodo.21853002).
 
 ### closures.csv columns
 
@@ -50,6 +52,6 @@ Data is licensed [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ## How to cite
 
-> ERstat. (2026). Canadian ER closures and service disruptions [Data set]. https://erstat.ca/data
+> ERstat. (2026). Canadian ER closures and service disruptions [Data set]. Zenodo. https://doi.org/10.5281/zenodo.21853002
 
 More formats (MLA, BibTeX): [erstat.ca/data](https://erstat.ca/data)

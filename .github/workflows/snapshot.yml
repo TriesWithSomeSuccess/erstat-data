@@ -27,3 +27,8 @@ jobs:
           git add data latest
           git diff --cached --quiet || git commit -m "snapshot: $(date -u +%Y-%m-%d)"
           git push
+      - name: Publish new version to Zenodo
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          ZENODO_CONCEPT_RECID: "21853002"
+        run: node scripts/zenodo.mjs
