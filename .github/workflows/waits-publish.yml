@@ -1,0 +1,27 @@
+name: Publish wait-times to Zenodo
+
+# Hetzner regenerates the wait-times snapshot from Timescale and pushes it to
+# wait-times/latest/ (it can't run a GitHub Action because Timescale is behind
+# Tailscale). That push fires this job, which publishes a new Zenodo version.
+on:
+  push:
+    paths:
+      - 'wait-times/latest/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Publish new version to Zenodo
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          ZENODO_CONCEPT_RECID: "21940685"
+        run: node scripts/zenodo-waits.mjs
