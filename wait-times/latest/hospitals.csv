@@ -1,0 +1,225 @@
+id,name,city,province,lat,lng,has_er,data_source,wait_metric,stat_type
+ab_airdriecommunityheal,Airdrie Community Health Centre,Airdrie,AB,51.287022,-114.013389,t,ahs,time_to_physician,current_estimate
+ab_albertachildrenshos,Alberta Children's Hospital,Calgary,AB,51.074674,-114.146892,t,ahs,time_to_physician,current_estimate
+ab_chinookregionalhospi,Chinook Regional Hospital,Lethbridge,AB,49.68535,-112.815185,t,ahs,time_to_physician,current_estimate
+ab_cochranecommunityhe,Cochrane Community Health Centre,Cochrane,AB,51.185046,-114.47305,t,ahs,time_to_physician,current_estimate
+ab_devongeneralhospital,Devon General Hospital,Devon,AB,53.351493,-113.730785,t,ahs,time_to_physician,current_estimate
+ab_foothillsmedicalcent,Foothills Medical Centre,Calgary,AB,51.064283,-114.133948,t,ahs,time_to_physician,current_estimate
+ab_fortsaskatchewancomm,Fort Saskatchewan Community Hospital,Fort Saskatchewan,AB,53.693159,-113.213229,t,ahs,time_to_physician,current_estimate
+ab_greynunscommunityhos,Grey Nuns Community Hospital,Edmonton,AB,53.461583,-113.429724,t,ahs,time_to_physician,current_estimate
+ab_leduccommunityhospit,Leduc Community Hospital,Leduc,AB,53.254836,-113.545331,t,ahs,time_to_physician,current_estimate
+ab_medicinehatregionalh,Medicine Hat Regional Hospital,Medicine Hat,AB,50.034733,-110.702725,t,ahs,time_to_physician,current_estimate
+ab_misericordiacommunit,Misericordia Community Hospital,Edmonton,AB,53.521028,-113.61232,t,ahs,time_to_physician,current_estimate
+ab_northeastcommunityhe,Northeast Community Health Centre,Edmonton,AB,53.604272,-113.417472,t,ahs,time_to_physician,current_estimate
+ab_northernlightsregion,Northern Lights Regional Health Centre,Fort Mcmurray,AB,56.716352,-111.362239,t,ahs,time_to_physician,current_estimate
+ab_okotokshealthwellnes,Okotoks Health and Wellness Centre,Okotoks,AB,50.707604,-113.972141,t,ahs,time_to_physician,current_estimate
+ab_peterlougheedcentre,Peter Lougheed Centre,Calgary,AB,51.078059,-113.98295,t,ahs,time_to_physician,current_estimate
+ab_queenelizabethiihosp,Queen Elizabeth Ii Hospital,Grande Prairie,AB,55.175292,-118.786568,t,ahs,time_to_physician,current_estimate
+ab_reddeerregionalhospi,Red Deer Regional Hospital Centre,Red Deer,AB,52.260779,-113.818671,t,ahs,time_to_physician,current_estimate
+ab_rockyviewgeneralhosp,Rockyview General Hospital,Calgary,AB,50.989822,-114.096632,t,ahs,time_to_physician,current_estimate
+ab_royalalexandrahospit,Royal Alexandra Hospital,Edmonton,AB,53.557387,-113.497772,t,ahs,time_to_physician,current_estimate
+ab_sheldonmchumircentre,Sheldon M. Chumir Health Centre,Calgary,AB,51.04152,-114.071972,t,ahs,time_to_physician,current_estimate
+ab_southcalgaryhealthce,South Calgary Health Centre,Calgary,AB,50.90275,-114.059027,t,ahs,time_to_physician,current_estimate
+ab_southhealthcampus,South Health Campus,Calgary,AB,50.882076,-113.951144,t,ahs,time_to_physician,current_estimate
+ab_southhealthcampusch,South Health Campus - Children's Emergency,Calgary,AB,50.881394,-113.952414,t,ahs,time_to_physician,current_estimate
+ab_stolleryschildrensh,Stollery Children's Hospital,Edmonton,AB,53.520765,-113.52101,t,ahs,time_to_physician,current_estimate
+ab_strathconacommunityh,Strathcona Community Hospital,Sherwood Park,AB,53.568056,-113.276389,t,ahs,time_to_physician,current_estimate
+ab_sturgeoncommunityhos,Sturgeon Community Hospital,St Albert,AB,53.65524,-113.625711,t,ahs,time_to_physician,current_estimate
+ab_universityofalbertah,University of Alberta Hospital and Stollery Children's Hospital,Edmonton,AB,53.520634,-113.524527,t,ahs,time_to_physician,current_estimate
+ab_westviewhealthcentre,Westview Health Centre,Stony Plain,AB,53.537465,-113.977133,t,ahs,time_to_physician,current_estimate
+bc_abbotsfordregionalho,Abbotsford Regional Hospital and Cancer Care,Abbotsford,BC,49.041893,-122.295136,t,edwaittimes,time_to_physician,current_estimate
+bc_bcchildrenshospital,BC Children's Hospital,Vancouver,BC,49.2454172,-123.1235782,t,edwaittimes,time_to_physician,current_estimate
+bc_burnabyhospital,Burnaby Hospital,Burnaby,BC,49.249479,-123.015787,t,edwaittimes,time_to_physician,current_estimate
+bc_chilliwackgeneralhos,Chilliwack General Hospital,Chilliwack,BC,49.166993,-121.963068,t,edwaittimes,time_to_physician,current_estimate
+bc_deltahospital,Delta Hospital,Delta,BC,49.085677,-123.061884,t,edwaittimes,time_to_physician,current_estimate
+bc_eagleridgehospital,Eagle Ridge Hospital,Port Moody,BC,49.285359,-122.824056,t,edwaittimes,time_to_physician,current_estimate
+bc_langleymemorialhosp,Langley Memorial Hospital,Langley,BC,49.094869,-122.612407,t,edwaittimes,time_to_physician,current_estimate
+bc_lionsgatehospital,Lions Gate Hospital,North Vancouver,BC,49.321864,-123.06837,t,edwaittimes,time_to_physician,current_estimate
+bc_peacearchhospital,Peace Arch Hospital,White Rock,BC,49.029741,-122.793026,t,edwaittimes,time_to_physician,current_estimate
+bc_pembertonhealthcentr,Pemberton Health Centre,Pemberton,BC,50.321081,-122.804414,t,edwaittimes,time_to_physician,current_estimate
+bc_powellrivergeneralho,Powell River General Hospital,Powell River,BC,49.850826,-124.518391,t,edwaittimes,time_to_physician,current_estimate
+bc_providencehealthcare,Providence Health Care - Mount Saint Joseph Hospital,Vancouver,BC,49.258002,-123.095299,t,edwaittimes,time_to_physician,current_estimate
+bc_richmondhospital,Richmond Hospital,Richmond,BC,49.168971,-123.146577,t,edwaittimes,time_to_physician,current_estimate
+bc_ridgemeadowshospital,Ridge Meadows Hospital,Maple Ridge,BC,49.216189,-122.63008,t,edwaittimes,time_to_physician,current_estimate
+bc_royalcolumbianhospit,Royal Columbian Hospital,New Westminster,BC,49.226414,-122.891637,t,edwaittimes,time_to_physician,current_estimate
+bc_squamishgeneralhospi,Squamish General Hospital,Squamish,BC,49.697911,-123.141176,t,edwaittimes,time_to_physician,current_estimate
+bc_stmaryshospitalseche,St. Mary's Hospital / Sechelt-Shishalh Hospital,Sechelt,BC,49.474619,-123.749631,t,edwaittimes,time_to_physician,current_estimate
+bc_stpaulshospital,St. Paul's Hospital,Vancouver,BC,49.280516,-123.128187,t,edwaittimes,time_to_physician,current_estimate
+bc_surreymemorialhospit,Surrey Memorial Hospital,Surrey,BC,49.176595,-122.841774,t,edwaittimes,time_to_physician,current_estimate
+bc_ubchospital,Ubc Hospital,Vancouver,BC,49.263156,-123.246002,t,edwaittimes,time_to_physician,current_estimate
+bc_vancouvergeneralhosp,Vancouver General Hospital,Vancouver,BC,49.261616,-123.123911,t,edwaittimes,time_to_physician,current_estimate
+bc_whistlerhealthcarece,Whistler Health Care Centre,Whistler,BC,50.11982,-122.955186,t,edwaittimes,time_to_physician,current_estimate
+mb_concordiahospital,Concordia Hospital,Winnipeg,MB,49.913511,-97.06463,t,wrha,time_to_physician,current_estimate
+mb_gracegeneralhospital,Grace General Hospital,Winnipeg,MB,49.882355,-97.276776,t,wrha,time_to_physician,current_estimate
+mb_healthsciencescentre,Health Sciences Centre - Adult,Winnipeg,MB,49.904682,-97.159448,t,wrha,time_to_physician,current_estimate
+mb_healthsciencescentrec,Health Sciences Centre - Children's,Winnipeg,MB,49.904982000000004,-97.159448,t,wrha,time_to_physician,current_estimate
+mb_sevenoaksgeneralhosp,Seven Oaks General Hospital,Winnipeg,MB,49.955313,-97.146103,t,wrha,time_to_physician,current_estimate
+mb_stbonifacegeneralhos,St. Boniface General Hospital,Winnipeg,MB,49.884337,-97.12484,t,wrha,time_to_physician,current_estimate
+mb_victoriageneralhospi,Victoria General Hospital - Winnipeg,Winnipeg,MB,49.806755,-97.152739,t,wrha,time_to_physician,current_estimate
+nb_campbelltonregionalh,Campbellton Regional Hospital,Campbellton,NB,47.993057,-66.666574,t,nb_arcgis,total_visit,current_estimate
+nb_centrehospitalieruni,Centre Hospitalier Universitaire Dr-Georges-l.-Dumont,Moncton,NB,46.098025,-64.786214,t,nb_arcgis,total_visit,current_estimate
+nb_dreverettchalmersreg,Dr. Everett Chalmers Regional Hospital,Fredericton,NB,45.93897,-66.654472,t,nb_arcgis,total_visit,current_estimate
+nb_grandmananhospital,Grand Manan Hospital,Grand Manan,NB,44.762202,-66.763835,t,nb_arcgis,total_visit,current_estimate
+nb_hpitaldelenfantjsusr,HÔPITAL DE L'ENFANT - JÉSUS RHSJ,Caraquet,NB,47.79453,-64.938719,t,nb_arcgis,total_visit,current_estimate
+nb_hpitaldetracadieshei,HÔPITAL DE TRACADIE-SHEILA,Tracadie-Sheila,NB,47.512383,-64.90633,t,nb_arcgis,total_visit,current_estimate
+nb_hpitalgeneraldegrand,HÔPITAL GENERAL DE GRAND-SAULT,Grand Falls/Grand-Sault,NB,47.045298,-67.754333,t,nb_arcgis,total_visit,current_estimate
+nb_hpitalrgionalchaleur,HÔPITAL RÉGIONAL CHALEUR,Bathurst,NB,47.649288,-65.694674,t,nb_arcgis,total_visit,current_estimate
+nb_hpitalrgionaldedmund,HÔPITAL RÉGIONAL D'EDMUNDSTON,Edmundston,NB,47.375995,-68.31069,t,nb_arcgis,total_visit,current_estimate
+nb_hpitalstellamarisdek,HÔPITAL STELLA-MARIS-DE-KENT,Sainte-Anne-De-Kent,NB,46.558871,-64.782351,t,nb_arcgis,total_visit,current_estimate
+nb_hoteldieuofsaintjose,Hotel Dieu of Saint-Joseph,Perth-Andover,NB,46.729003,-67.710327,t,nb_arcgis,total_visit,current_estimate
+nb_hteldieusaintjosephd,HÔTEL-DIEU SAINT-JOSEPH DE SAINT-QUENTIN,Saint-Quentin,NB,47.497546,-67.393196,t,nb_arcgis,total_visit,current_estimate
+nb_miramichiregionalhos,Miramichi Regional Hospital,Miramichi,NB,47.002868,-65.541443,t,nb_arcgis,total_visit,current_estimate
+nb_oromoctopublichospit,Oromocto Public Hospital,Oromocto,NB,45.848636,-66.47318,t,nb_arcgis,total_visit,current_estimate
+nb_sackvillememorialhos,Sackville Memorial Hospital,Sackville,NB,45.891902,-64.372445,t,nb_arcgis,total_visit,current_estimate
+nb_saintjohnregionalhos,Saint John Regional Hospital,Saint John,NB,45.302733,-66.08515,t,nb_arcgis,total_visit,current_estimate
+nb_themonctonhospital,The Moncton Hospital,Moncton,NB,46.104977,-64.80615,t,nb_arcgis,total_visit,current_estimate
+nb_upperrivervalleyhosp,Upper River Valley Hospital,Waterville,NB,46.283593,-67.571154,t,nb_arcgis,total_visit,current_estimate
+ns_aberdeenhospitalnewg,Aberdeen Hospital - New Glasgow,New Glasgow,NS,45.573042,-62.642895,t,nshealth,time_to_physician,ml_prediction
+ns_capebretonregionalho,Cape Breton Regional Hospital,Sydney,NS,46.113409,-60.174263,t,nshealth,time_to_physician,ml_prediction
+ns_cobequidcommunityhe,Cobequid Community Health Centre,Lower Sackville,NS,44.7726,-63.6633,t,nshealth,time_to_physician,ml_prediction
+ns_colchesterregionalho,Colchester East Hants Health Centre,Truro,NS,45.357097,-63.292882,t,nshealth,time_to_physician,current_estimate
+ns_cumberlandregionalhe,Cumberland Regional Health Care Centre,Amherst,NS,45.804109,-64.1969,t,nshealth,time_to_physician,ml_prediction
+ns_dartmouthgeneralhosp,Dartmouth General Hospital,Dartmouth,NS,44.653987,-63.547621,t,nshealth,time_to_physician,ml_prediction
+ns_hantscommunityhospit,Hants Community Hospital,Windsor,NS,44.986514,-64.120414,t,nshealth,time_to_physician,ml_prediction
+ns_invernessconsolidate,Inverness Consolidated Memorial Hospital,Inverness,NS,46.226968,-61.304843,t,nshealth,time_to_physician,ml_prediction
+ns_qeiihalifaxinfirmary,Qeii - Halifax Infirmary Site,Halifax,NS,44.645784,-63.586389,t,nshealth,time_to_physician,ml_prediction
+ns_queensgeneralhospita,Queens General Hospital,Liverpool,NS,44.037653,-64.705594,t,nshealth,time_to_physician,ml_prediction
+ns_southshoreregionalho,South Shore Regional Hospital,Bridgewater,NS,44.383167,-64.510596,t,nshealth,time_to_physician,ml_prediction
+ns_stmarthasregionalhos,St. Martha's Regional Hospital,Antigonish,NS,45.627949,-61.980072,t,nshealth,time_to_physician,ml_prediction
+ns_valleyregionalhospit,Valley Regional Hospital,Kentville,NS,45.084053,-64.500591,t,nshealth,time_to_physician,ml_prediction
+ns_yarmouthregionalhosp,Yarmouth Regional Hospital,Yarmouth,NS,43.850647,-66.121765,t,nshealth,time_to_physician,ml_prediction
+on_bluewaterhealth,Bluewater Health,Sarnia,ON,42.977366,-82.390548,t,transformsso,time_to_physician,current_estimate
+on_bluewaterhealthpetro,Bluewater Health - Petrolia (Charlotte Eleanor Englehart Hospital),Petrolia,ON,42.87826,-82.147367,t,transformsso,time_to_physician,current_estimate
+on_brantfordgeneralhosp,Brantford General Hospital,Brantford,ON,43.1361,-80.2788,t,bchs_seewait,time_to_physician,median
+on_chathamkenthealthall,Chatham-Kent Health Alliance,Chatham,ON,42.405071,-82.193665,t,transformsso,time_to_physician,median
+on_chathamkenthealthwal,Chatham-Kent Health Alliance - Wallaceburg,Wallaceburg,ON,42.5979,-82.3838,t,transformsso,time_to_physician,median
+on_collingwoodgeneralan,Collingwood General and Marine Hospital,Collingwood,ON,44.499502,-80.203407,t,oculys,time_to_physician,current_estimate
+on_creditvalleyhospital,Credit Valley Hospital,Mississauga,ON,43.55935,-79.703246,t,trillium,time_to_physician,current_estimate
+on_englehartanddistrict,Englehart and District Hospital Inc.,Englehart,ON,47.823199,-79.879574,t,oculys,time_to_physician,current_estimate
+on_erieshoreshealthcare,Erie Shores HealthCare,Leamington,ON,42.054,-82.6,t,transformsso,time_to_physician,median
+on_georgetownhospital,Georgetown Hospital,Georgetown,ON,43.644797,-79.933322,t,halton,time_to_physician,current_estimate
+on_miltondistricthospit,Halton Healthcare - Milton District Hospital,Milton,ON,43.5081,-79.8744,t,halton,time_to_physician,current_estimate
+on_haltonhealthcareserv,Halton Healthcare Services - Oakville,Oakville,ON,43.448926,-79.766597,t,halton,time_to_physician,current_estimate
+on_hamiltongeneralhosp,Hamilton General Hospital,Hamilton,ON,43.2584,-79.8556,t,hamilton,time_to_physician,current_estimate
+on_hamiltonhealthscienc,Hamilton Health Sciences - Mcmaster,Hamilton,ON,43.253,-79.860524,t,hamilton,time_to_physician,current_estimate
+on_headwatershealthcare,Headwaters Health Care Centre - Headwaters Orangeville,Orangeville,ON,43.920509,-80.072243,t,oculys,time_to_physician,current_estimate
+on_healthsciencesnorthr,Health Sciences North - Ramsey Lake Health Centre,Sudbury,ON,46.467935,-80.996284,t,oculys,time_to_physician,current_estimate
+on_huroniadistricthospi,Huronia District Hospital,Midland,ON,44.742184,-79.913566,t,oculys,time_to_physician,current_estimate
+on_juravinskihospital,Juravinski Hospital,Hamilton,ON,43.241,-79.8335,t,hamilton,time_to_physician,current_estimate
+on_kirklandanddistricth,Kirkland and District Hospital,Kirkland Lake,ON,48.1534486,-80.0146987,t,oculys,time_to_physician,current_estimate
+on_lakeridgehealthajaxp,Lakeridge Health Ajax Pickering Hospital,Ajax,ON,43.838028,-79.0177,t,lakeridge,time_to_physician,current_estimate
+on_lakeridgehealthbowma,Lakeridge Health - Bowmanville,Bowmanville,ON,43.909145,-78.679135,t,lakeridge,time_to_physician,current_estimate
+on_lakeridgehealthoshaw,Lakeridge Health - Oshawa,Oshawa,ON,43.905564,-78.869384,t,lakeridge,time_to_physician,current_estimate
+on_lakeridgehealthportp,Lakeridge Health - Port Perry,Port Perry,ON,44.104888,-78.954839,t,lakeridge,time_to_physician,current_estimate
+on_londonhealthscienchi,London Health Sciences Centre - Children's Hospital,London,ON,42.9682,-81.2249,t,lhsc,time_to_physician,current_estimate
+on_londonhealthscienuni,London Health Sciences Centre - University Hospital,London,ON,43.0131,-81.2741,t,lhsc,time_to_physician,current_estimate
+on_londonhealthsciences,London Health Sciences Centre - Victoria,London,ON,42.960029,-81.22543,t,lhsc,time_to_physician,current_estimate
+on_niagarahealthsystemd,Niagara Health System - Douglas Memorial Hospital,Fort Erie,ON,42.912453,-78.924119,t,oculys,time_to_physician,current_estimate
+on_niagarahealthsystemg,Niagara Health System - Greater Niagara General Site,Niagara Falls,ON,43.094227,-79.089464,t,oculys,time_to_physician,current_estimate
+on_niagarahealthsystemp,Niagara Health System - Port Colborne General Site,Port Colborne,ON,42.879704,-79.258696,t,oculys,time_to_physician,current_estimate
+on_niagarahealthsystems,Niagara Health System - St. Catharines,St Catharines,ON,43.153522,-79.278683,t,oculys,time_to_physician,current_estimate
+on_niagarahealthsystemw,Niagara Health System - Welland Hospital Site,Welland,ON,42.9921,-79.2481,t,oculys,time_to_physician,current_estimate
+on_northbayregionalheal,North Bay Regional Health Centre,North Bay,ON,46.335613,-79.498369,t,html_scrape,time_to_physician,current_estimate
+on_rossmemorialhospital,Ross Memorial Hospital,Lindsay,ON,44.352,-78.7378,t,oculys,time_to_physician,current_estimate
+on_royalvictoriaregional,Royal Victoria Regional Health Centre,Barrie,ON,44.3916,-79.6903,t,html_scrape,time_to_physician,current_estimate
+on_saultareahospital,Sault Area Hospital,Sault Ste Marie,ON,46.548814,-84.311159,t,sah_luma,time_to_physician,current_estimate
+on_stevensonmemorialhos,Stevenson Memorial Hospital,Alliston,ON,44.155748,-79.875121,t,oculys,time_to_physician,current_estimate
+on_stjosephshealthcarec,St. Joseph's Healthcare - Charlton Campus,Hamilton,ON,43.240445,-79.884108,t,hamilton,time_to_physician,current_estimate
+on_stjosephshealthcareh,St. Joseph's Healthcare Hamilton - King Campus,Hamilton,ON,43.220589,-79.774885,t,hamilton,time_to_physician,current_estimate
+on_stmarysgeneralhospit,St. Mary's General Hospital,Kitchener,ON,43.438288,-80.500798,t,oculys,time_to_physician,current_estimate
+on_sunnybrookhealthscie,Sunnybrook Health Sciences Centre,Toronto,ON,43.7254,-79.3725,t,html_scrape,time_to_physician,current_estimate
+on_temiskaminghospital,Temiskaming Hospital,New Liskeard,ON,47.495162,-79.693153,t,oculys,time_to_physician,current_estimate
+on_timminsanddistrictho,TIMMINS AND DISTRICT HOSPITAL/L'HÔPITAL DE TIMMINS ET DU DISTRICT,Timmins,ON,48.487587,-81.313592,t,html_scrape,time_to_physician,current_estimate
+on_trilliumhealthpartne,Trillium Health Partners - Mississauga Hospital,Mississauga,ON,43.571586,-79.607685,t,trillium,time_to_physician,current_estimate
+on_queenswayhealthcentr,Trillium Health Partners - Queensway Health Centre,Toronto,ON,43.6165,-79.5557,t,trillium,time_to_physician,current_estimate
+on_universityhealthnetw,University Health Network - Toronto General Hospital,Toronto,ON,43.659111,-79.388209,t,uhn,time_to_physician,p80
+on_torontowesternhospital,University Health Network - Toronto Western Hospital,Toronto,ON,43.6535,-79.4103,t,uhn,time_to_physician,p80
+on_westlincolnmemorialh,West Lincoln Memorial Hospital,Grimsby,ON,43.188256,-79.541906,t,hamilton,time_to_physician,current_estimate
+on_westparrysoundhealth,West Parry Sound Health Centre,Parry Sound,ON,45.340743,-80.016767,t,oculys,time_to_physician,current_estimate
+on_willetturgentcarecen,Willett Urgent Care Centre,Paris,ON,43.193,-80.383,t,bchs_willett,time_to_physician,median
+on_williamoslerhealthsy,William Osler Health System - Brampton Civic Hospital,Brampton,ON,43.747466,-79.743223,t,osler,time_to_physician,current_estimate
+on_williamosleretobicok,William Osler Health System - Etobicoke General Hospital,Etobicoke,ON,43.6544,-79.5597,t,osler,time_to_physician,current_estimate
+on_williamoslerpeelmemo,William Osler Health System - Peel Memorial Centre,Brampton,ON,43.6856,-79.759,t,osler,time_to_physician,current_estimate
+on_windsorregionalmetro,Windsor Regional Hospital - Met Campus,Windsor,ON,42.2917,-83.0108,t,transformsso,time_to_physician,median
+on_windsorregionalhospi,Windsor Regional Hospital - Ouellette Campus,Windsor,ON,42.308636,-83.031988,t,transformsso,time_to_physician,median
+pe_kingscountymemorialh,Kings County Memorial Hospital,Montague,PE,46.16934,-62.655768,t,pei_health,unknown,current_estimate
+pe_princecountyhospital,Prince County Hospital,Summerside,PE,46.41743,-63.773048,t,pei_health,unknown,current_estimate
+pe_queenelizabethhospit,Queen Elizabeth Hospital,Charlottetown,PE,46.255749,-63.102348,t,pei_health,unknown,current_estimate
+pe_westernhospital,Western Hospital,Alberton,PE,46.81108,-64.066028,t,pei_health,unknown,current_estimate
+qc_centrederadaptatione,"CENTRE DE RÉADAPTATION EN DÉFICIENCE INTELLECTUELLE, TROUBLE DU SPECTRE DE L'AUTISME ET EN DÉFICIENCE PHYSIQUE THÉRÈSE-MARTIN",Rivière-Ouelle,QC,47.455067,-70.000724,t,qc_quebec,time_to_physician,current_estimate
+qc_centrederechercheduc,CENTRE DE RECHERCHE DU CENTRE HOSPITALIER DE L'UNIVERSITÉ DE MONTRÉAL,Montréal,QC,45.510839,-73.555946,t,qc_quebec,time_to_physician,current_estimate
+qc_centredesantdechibou,CENTRE DE SANTÉ DE CHIBOUGAMAU,Chibougamau,QC,49.915951,-74.349183,t,qc_quebec,time_to_physician,current_estimate
+qc_centredesantetdeserv,CENTRE DE SANTÉ ET DE SERVICES SOCIAUX DU HAUT-SAINT-MAURICE,La Tuque,QC,47.428451,-72.785692,t,qc_quebec,time_to_physician,current_estimate
+qc_centredeservicesambu,CENTRE DE SERVICES AMBULATOIRES DE LÉVIS,Lévis,QC,46.81568,-71.174936,t,qc_quebec,time_to_physician,current_estimate
+qc_centredhbergementdel,CENTRE D'HÉBERGEMENT DE L'HÔTEL-DIEU-DE-SAINT-HYACINTHE,Saint-Hyacinthe,QC,45.62572,-72.950032,t,qc_quebec,time_to_physician,current_estimate
+qc_centrehospitalierrob,CENTRE HOSPITALIER ROBERT-GIFFARD,Québec City,QC,46.847932,-71.220726,t,qc_quebec,time_to_physician,current_estimate
+qc_centremultiservicesd,CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE LA MINGANIE,Havre-Saint-Pierre,QC,50.237811,-63.605244,t,qc_quebec,time_to_physician,current_estimate
+qc_chusaintejustine,CHU SAINTE-JUSTINE,Montréal,QC,45.503155,-73.624943,t,qc_quebec,time_to_physician,current_estimate
+qc_chushpitalfleurimont,CHUS - HÔPITAL FLEURIMONT,Sherbrooke,QC,45.447736,-71.869027,t,qc_quebec,time_to_physician,current_estimate
+qc_chushteldieudesherbr,CHUS - HÔTEL-DIEU DE SHERBROOKE,Sherbrooke,QC,45.398442,-71.877948,t,qc_quebec,time_to_physician,current_estimate
+qc_clscdepohenegamook,CLSC DE POHENEGAMOOK,Pohénégamook,QC,47.489759,-69.281334,t,qc_quebec,time_to_physician,current_estimate
+qc_clscethpitalleroyer,CLSC ET HÔPITAL LE ROYER,Baie-Comeau,QC,49.190176,-68.252525,t,qc_quebec,time_to_physician,current_estimate
+qc_groupedemdecinedefam,GROUPE DE MÉDECINE DE FAMILLE UNIVERSITAIRE LAURIER,Québec,QC,46.765936,-71.289344,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalannalaberge,HÔPITAL ANNA-LABERGE,Châteauguay,QC,45.345661,-73.763446,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalbarriemmorial,HÔPITAL BARRIE MÉMORIAL,Ormstown,QC,45.126343,-73.999867,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalbromemissisquo,HÔPITAL BROME-MISSISQUOI-PERKINS,Cowansville,QC,45.207084,-72.714415,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalcharleslemoyne,HÔPITAL CHARLES-LE MOYNE,Longueuil,QC,45.497266,-73.486423,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldalma,HÔPITAL D'ALMA,Alma,QC,48.55062,-71.665075,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldamos,HÔPITAL D'AMOS,Amos,QC,48.574532,-78.125459,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldamqui,HÔPITAL D'AMQUI,Amqui,QC,48.468477,-67.419325,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldechandler,HÔPITAL DE CHANDLER,Chandler,QC,48.354823,-64.67168,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldechicoutimi,HÔPITAL DE CHICOUTIMI,Saguenay,QC,48.425975,-71.048599,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldedolbeaumista,HÔPITAL DE DOLBEAU-MISTASSINI,Dolbeau-Mistassini,QC,48.885835,-72.239367,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldegasp,HÔPITAL DE GASPÉ,Gaspé,QC,48.812942,-64.496646,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldegatineau,HÔPITAL DE GATINEAU,Gatineau,QC,45.493296,-75.691064,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldegranby,HÔPITAL DE GRANBY,Granby,QC,45.410592,-72.722956,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldehull,HÔPITAL DE HULL,Gatineau,QC,45.444873,-75.746033,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldelabaie,HÔPITAL DE LA BAIE,Saguenay,QC,48.343909,-70.883162,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldelachine,HÔPITAL DE LACHINE,Montréal,QC,45.440835,-73.676985,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldelacitdelasan,HÔPITAL DE LA CITÉ-DE-LA-SANTÉ,Laval,QC,45.603319,-73.710819,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldelamalbaie,HÔPITAL DE LA MALBAIE,La Malbaie,QC,47.65619,-70.151741,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldelarchipel,HÔPITAL DE L'ARCHIPEL,Les Îles-De-La-Madeleine,QC,47.375575,-61.868773,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldelasalle,HÔPITAL DE LASALLE,Montréal,QC,45.420839,-73.623371,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldelenfantjsus,HÔPITAL DE L'ENFANT-JÉSUS,Québec City,QC,46.837483,-71.22604,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldemaniwaki,HÔPITAL DE MANIWAKI,Maniwaki,QC,46.39085,-75.979405,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldematane,HÔPITAL DE MATANE,Matane,QC,48.843566,-67.524416,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldemontlaurier,HÔPITAL DE MONT-LAURIER,Mont-Laurier,QC,46.549211,-75.517655,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalderouynnoranda,HÔPITAL DE ROUYN-NORANDA,Rouyn-Noranda,QC,48.243809,-79.019318,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldesainteustach,HÔPITAL DE SAINT-EUSTACHE,Saint-Eustache,QC,45.571266,-73.913739,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldesaintgeorges,HÔPITAL DE SAINT-GEORGES,Saint-Georges,QC,46.109716,-70.685194,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldesaintjrme,HÔPITAL DE SAINT-JÉRÔME,Saint-Jérôme,QC,45.765569,-74.000191,t,qc_quebec,time_to_physician,current_estimate
+qc_hopitaldthetfordmine,Hôpital de Thetford,Thetford Mines,QC,46.1101,-71.2786,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldeverdun,HÔPITAL DE VERDUN,Montréal,QC,45.464098,-73.563989,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalducentredelama,HÔPITAL DU CENTRE-DE-LA-MAURICIE,Shawinigan,QC,46.525584,-72.743393,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalduhautrichelie,HÔPITAL DU HAUT-RICHELIEU,Saint-Jean-Sur-Richelieu,QC,45.332523,-73.270212,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldusacrcurdemon,HÔPITAL DU SACRÉ-CUR DE MONTRÉAL,Montréal,QC,45.532578,-73.714036,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldusaintsacreme,HÔPITAL DU SAINT-SACREMENT,Québec,QC,46.799357,-71.246411,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaldusurot,HÔPITAL DU SUROÎT,Salaberry-De-Valleyfield,QC,45.250926,-74.130708,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalensantmentalea,HÔPITAL EN SANTÉ MENTALE ALBERT-PRÉVOST,Montréal,QC,45.529026,-73.729041,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaletchslddepapin,HÔPITAL ET CHSLD DE PAPINEAU,Gatineau,QC,45.588572,-75.411481,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaletchsldduponti,HÔPITAL ET CHSLD DU PONTIAC,Shawville,QC,45.605968,-76.484009,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaletchsldmmorial,HÔPITAL ET CHSLD MÉMORIAL DE WAKEFIELD / WAKEFIELD MEMORIAL HOSPITAL,La Pêche,QC,45.648575,-75.932482,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaletclscdeseptle,HÔPITAL ET CLSC DE SEPT-ÎLES,Sept-Îles,QC,50.209826,-66.383983,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalfleury,HÔPITAL FLEURY,Montréal,QC,45.57181,-73.650367,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalgnraldemontral,HÔPITAL GÉNÉRAL DE MONTRÉAL,Montréal,QC,45.497046,-73.589036,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalgnraldulakesho,HÔPITAL GÉNÉRAL DU LAKESHORE,Pointe-Claire,QC,45.44855,-73.833668,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalgnraljuif,HÔPITAL GÉNÉRAL JUIF,Montréal,QC,45.495761,-73.630634,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalhonormercier,HÔPITAL HONORÉ-MERCIER,Saint-Hyacinthe,QC,45.634833,-72.959476,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitaljeantalon,HÔPITAL JEAN-TALON,Montréal,QC,45.545943,-73.609538,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalmaisonneuveros,HÔPITAL MAISONNEUVE-ROSEMONT,Montréal,QC,45.574065,-73.559548,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalnotredame,HÔPITAL NOTRE-DAME,Montréal,QC,45.525358,-73.56356,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalpierreboucher,HÔPITAL PIERRE-BOUCHER,Longueuil,QC,45.5383,-73.458792,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalpierrelegardeu,HÔPITAL PIERRE-LE GARDEUR,Terrebonne,QC,45.723978,-73.510536,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalrgionaldeportn,HÔPITAL RÉGIONAL DE PORTNEUF CLSC DE SAINT-RAYMOND,Saint-Raymond,QC,46.894933,-71.822153,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalroyalvictoria,HÔPITAL ROYAL VICTORIA,Montréal,QC,45.5082,-73.581456,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalsaintecroix,HÔPITAL SAINTE-CROIX,Drummondville,QC,45.880009,-72.477304,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalsaintfranoisda,HÔPITAL SAINT-FRANÇOIS DASSISE,Québec,QC,46.827533,-71.236389,t,qc_quebec,time_to_physician,current_estimate
+qc_hpitalsantacabrini,HÔPITAL SANTA CABRINI,Montréal,QC,45.580138,-73.571719,t,qc_quebec,time_to_physician,current_estimate
+qc_hteldieudarthabaska,HÔTEL-DIEU D'ARTHABASKA,Victoriaville,QC,46.040622,-71.914983,t,qc_quebec,time_to_physician,current_estimate
+qc_hteldieudelvis,HÔTEL-DIEU DE LÉVIS,Lévis,QC,46.814863,-71.177405,t,qc_quebec,time_to_physician,current_estimate
+qc_hteldieudemontmagny,HÔTEL-DIEU DE MONTMAGNY,Montmagny,QC,46.976367,-70.597072,t,qc_quebec,time_to_physician,current_estimate
+qc_hteldieudesorel,HÔTEL-DIEU DE SOREL,Sorel-Tracy,QC,46.045811,-73.095633,t,qc_quebec,time_to_physician,current_estimate
+qc_institutdecardiologi,INSTITUT DE CARDIOLOGIE DE MONTRÉAL,Montréal,QC,45.573763,-73.577817,t,qc_quebec,time_to_physician,current_estimate
+qc_institutuniversitair,INSTITUT UNIVERSITAIRE DE GÉRIATRIE DE MONTRÉAL,Montréal,QC,45.491031,-73.623817,t,qc_quebec,time_to_physician,current_estimate
+qc_lhpitaldemontralpour,L'HÔPITAL DE MONTRÉAL POUR ENFANTS,Montréal,QC,45.488959,-73.582312,t,qc_quebec,time_to_physician,current_estimate
+qc_pavillonlhteldieudeq,PAVILLON L'HÔTEL-DIEU DE QUÉBEC,Québec,QC,46.81539,-71.210994,t,qc_quebec,time_to_physician,current_estimate
