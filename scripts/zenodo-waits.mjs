@@ -36,6 +36,7 @@ const metadata = {
   related_identifiers: [
     { identifier: 'https://erstat.ca/data', relation: 'isDocumentedBy' },
     { identifier: '10.5281/zenodo.21853002', relation: 'references' },
+    { identifier: 'https://www.wikidata.org/wiki/Q141085438', relation: 'isReferencedBy' },
   ],
 };
 

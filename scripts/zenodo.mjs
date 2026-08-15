@@ -34,7 +34,7 @@ const metadata = {
   keywords: ['emergency room closures', 'ER wait times', 'Canada', 'hospital closures', 'emergency department', 'health care access', 'service disruptions'],
   version: today,
   publication_date: today,
-  related_identifiers: [{ identifier: 'https://erstat.ca/data', relation: 'isDerivedFrom' }],
+  related_identifiers: [{ identifier: 'https://erstat.ca/data', relation: 'isDerivedFrom' }, { identifier: 'https://www.wikidata.org/wiki/Q141071728', relation: 'isReferencedBy' }],
 };
 
 let draft;
