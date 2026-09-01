@@ -19,6 +19,20 @@ async function api(path, opts = {}) {
   return res.status === 204 ? null : res.json();
 }
 
+async function apiWithRetry(path, opts = {}, maxRetries = 3) {
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      return await api(path, opts);
+    } catch (error) {
+      if (attempt === maxRetries - 1) throw error;
+      // Exponential backoff: 2s, 4s, 8s
+      const delay = Math.pow(2, attempt + 1) * 1000;
+      console.log(`Retry attempt ${attempt + 1}/${maxRetries - 1} after ${delay}ms: ${error.message}`);
+      await new Promise(resolve => setTimeout(resolve, delay));
+    }
+  }
+}
+
 const today = new Date().toISOString().slice(0, 10);
 
 const metadata = {
@@ -26,9 +40,9 @@ const metadata = {
   title: 'Canadian Emergency Department Wait Times (ERstat)',
   creators: [{ name: 'Turnbull, Jason', affiliation: 'ERstat' }],
   description:
-    '<p>Historical emergency department (ED) wait times at Canadian hospitals, compiled by <a href="https://erstat.ca">ERstat</a> from official provincial and regional health-authority feeds. This is a periodic archived snapshot of the historical record; live, current data is at <a href="https://erstat.ca">erstat.ca</a>.</p>' +
-    '<p>Three CSV files (documented in <code>README.md</code>): <code>hospitals.csv</code> &mdash; reference table of the emergency departments; <code>wait_times_hourly.csv</code> &mdash; hourly median/min/max wait per hospital (UTC); <code>wait_patterns.csv</code> &mdash; typical wait by local day-of-week and hour-of-day (the "when is this ED least busy" table).</p>' +
-    '<p>Wait times are estimates (most commonly time-to-physician) and are not medical advice; in an emergency, call 911. Live data and a free API: <a href="https://erstat.ca/data">erstat.ca/data</a>. Commercial use and live-feed licensing: hello@erstat.ca.</p>',
+    '<p>Historical emergency department (ED) wait times at Canadian hospitals, compiled by <a href="https://erstat.ca">ERstat</a> from official provincial and regional health-authority feeds. This[...]
+    '<p>Three CSV files (documented in <code>README.md</code>): <code>hospitals.csv</code> &mdash; reference table of the emergency departments; <code>wait_times_hourly.csv</code> &mdash; hourly m[...]
+    '<p>Wait times are estimates (most commonly time-to-physician) and are not medical advice; in an emergency, call 911. Live data and a free API: <a href="https://erstat.ca/data">erstat.ca/data<[...]
   license: 'cc-by-nc-4.0',
   keywords: ['emergency department wait times', 'ER wait times', 'Canada', 'hospital wait times', 'emergency medicine', 'health care access', 'real-time health data'],
   version: today,
@@ -50,7 +64,7 @@ if (!CONCEPT) {
   const draftId = nv.links.latest_draft.split('/').pop();
   draft = await api(`/deposit/depositions/${draftId}`);
   for (const f of draft.files || []) {
-    await api(`/deposit/depositions/${draft.id}/files/${f.id}`, { method: 'DELETE' });
+    await apiWithRetry(`/deposit/depositions/${draft.id}/files/${f.id}`, { method: 'DELETE' });
   }
 }
 
