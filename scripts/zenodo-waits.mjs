@@ -84,12 +84,25 @@ const uploads = [
 const bucket = draft.links.bucket;
 for (const [srcPath, name, gz] of uploads) {
   const body = gz ? gunzipSync(readFileSync(srcPath)) : readFileSync(srcPath);
-  const res = await fetch(`${bucket}/${name}`, {
-    method: 'PUT',
-    headers: { Authorization: `Bearer ${TOKEN}`, 'Content-Type': 'application/octet-stream' },
-    body,
-  });
-  if (!res.ok) throw new Error(`upload ${name} -> HTTP ${res.status}: ${await res.text()}`);
+  let uploaded = false;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const res = await fetch(`${bucket}/${name}`, {
+        method: 'PUT',
+        headers: { Authorization: `Bearer ${TOKEN}`, 'Content-Type': 'application/octet-stream' },
+        body,
+        signal: AbortSignal.timeout(180000), // 3 minute timeout per upload
+      });
+      if (!res.ok) throw new Error(`upload ${name} -> HTTP ${res.status}: ${await res.text()}`);
+      console.log(`Uploaded ${name}`);
+      uploaded = true;
+      break;
+    } catch (error) {
+      if (attempt === 2) throw error;
+      console.log(`Upload retry ${attempt + 1}/2 for ${name}: ${error.message}`);
+      await new Promise(resolve => setTimeout(resolve, 2000));
+    }
+  }
 }
 
 await api(`/deposit/depositions/${draft.id}`, { method: 'PUT', body: JSON.stringify({ metadata }) });
