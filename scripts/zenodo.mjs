@@ -19,6 +19,20 @@ async function api(path, opts = {}) {
   return res.status === 204 ? null : res.json();
 }
 
+async function apiWithRetry(path, opts = {}, maxRetries = 3) {
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      return await api(path, opts);
+    } catch (error) {
+      if (attempt === maxRetries - 1) throw error;
+      // Exponential backoff: 2s, 4s, 8s
+      const delay = Math.pow(2, attempt + 1) * 1000;
+      console.log(`Retry attempt ${attempt + 1}/${maxRetries - 1} after ${delay}ms: ${error.message}`);
+      await new Promise(resolve => setTimeout(resolve, delay));
+    }
+  }
+}
+
 const today = new Date().toISOString().slice(0, 10);
 
 const metadata = {
@@ -26,10 +40,9 @@ const metadata = {
   title: 'Canadian ER Closures and Service Disruptions (ERstat)',
   creators: [{ name: 'Turnbull, Jason', affiliation: 'ERstat' }],
   description:
-    '<p>Point-in-time records of Canadian emergency-room closures, reopenings and service disruptions, collected continuously by <a href="https://erstat.ca">ERstat</a> from official health-authority sources across all provinces, plus per-province counts of ERs publishing live wait times. No government or agency publishes this as one national record.</p>' +
-    '<p><code>closures.csv</code>: every ER closed or on reduced service at snapshot time, with status message and expected reopening where published. <code>coverage.csv</code>: per-province ER counts and live wait-time reporting. Coverage began February 2026; snapshots are monthly.</p>' +
-    '<p>Canonical dataset page (access, formats, citations): <a href="https://erstat.ca/data">erstat.ca/data</a>. Live JSON API with a free key: <a href="https://erstat.ca/developers">erstat.ca/developers</a>. Monthly CSV archive: <a href="https://github.com/TriesWithSomeSuccess/erstat-data">github.com/TriesWithSomeSuccess/erstat-data</a>.</p>' +
-    '<p>Free for non-commercial use with attribution (a visible link to erstat.ca). Full event-level history, wait-time time series, bulk export and commercial use are available under a <a href="https://erstat.ca/licensing">commercial licence</a>.</p>',
+    '<p>Point-in-time records of Canadian emergency-room closures, reopenings and service disruptions, collected continuously by <a href="https://erstat.ca">ERstat</a> from official health-authority sources across all provinces and territories.</p>' +
+    '<p><code>closures.csv</code>: every ER closed or on reduced service at snapshot time, with status message and expected reopening where published. <code>coverage.csv</code>: per-province ER counts and data freshness. Canonical dataset page (access, formats, citations): <a href="https://erstat.ca/data">erstat.ca/data</a>. Live JSON API with a free key: <a href="https://erstat.ca/developers">erstat.ca/developers</a>.</p>' +
+    '<p>Free for non-commercial use with attribution (a visible link to erstat.ca). Full event-level history, wait-time time series, bulk export and commercial use are available under a separate license.</p>',
   license: 'cc-by-nc-4.0',
   keywords: ['emergency room closures', 'ER wait times', 'Canada', 'hospital closures', 'emergency department', 'health care access', 'service disruptions'],
   version: today,
@@ -42,24 +55,46 @@ if (!CONCEPT) {
   draft = await api('/deposit/depositions', { method: 'POST', body: '{}' });
 } else {
   const list = await api(`/deposit/depositions?q=conceptrecid:${CONCEPT}&status=published&sort=mostrecent&size=1`);
-  if (!list.length) throw new Error(`No published deposition found for concept ${CONCEPT}`);
-  const nv = await api(`/deposit/depositions/${list[0].id}/actions/newversion`, { method: 'POST' });
-  const draftId = nv.links.latest_draft.split('/').pop();
-  draft = await api(`/deposit/depositions/${draftId}`);
-  for (const f of draft.files || []) {
-    await api(`/deposit/depositions/${draft.id}/files/${f.id}`, { method: 'DELETE' });
+  if (!list.length) {
+    console.log(`No published deposition found for concept ${CONCEPT}, creating new one`);
+    draft = await api('/deposit/depositions', { method: 'POST', body: '{}' });
+  } else {
+    try {
+      const nv = await apiWithRetry(`/deposit/depositions/${list[0].id}/actions/newversion`, { method: 'POST' });
+      const draftId = nv.links.latest_draft.split('/').pop();
+      draft = await api(`/deposit/depositions/${draftId}`);
+      for (const f of draft.files || []) {
+        await apiWithRetry(`/deposit/depositions/${draft.id}/files/${f.id}`, { method: 'DELETE' });
+      }
+    } catch (error) {
+      console.log(`Failed to create new version: ${error.message}. Creating new deposition instead.`);
+      draft = await api('/deposit/depositions', { method: 'POST', body: '{}' });
+    }
   }
 }
 
 const bucket = draft.links.bucket;
 for (const file of ['latest/closures.csv', 'latest/coverage.csv', 'README.md']) {
   const name = file.split('/').pop();
-  const res = await fetch(`${bucket}/${name}`, {
-    method: 'PUT',
-    headers: { Authorization: `Bearer ${TOKEN}`, 'Content-Type': 'application/octet-stream' },
-    body: readFileSync(file),
-  });
-  if (!res.ok) throw new Error(`upload ${name} -> HTTP ${res.status}: ${await res.text()}`);
+  let uploaded = false;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const res = await fetch(`${bucket}/${name}`, {
+        method: 'PUT',
+        headers: { Authorization: `Bearer ${TOKEN}`, 'Content-Type': 'application/octet-stream' },
+        body: readFileSync(file),
+        signal: AbortSignal.timeout(180000), // 3 minute timeout per upload
+      });
+      if (!res.ok) throw new Error(`upload ${name} -> HTTP ${res.status}: ${await res.text()}`);
+      console.log(`Uploaded ${name}`);
+      uploaded = true;
+      break;
+    } catch (error) {
+      if (attempt === 2) throw error;
+      console.log(`Upload retry ${attempt + 1}/2 for ${name}: ${error.message}`);
+      await new Promise(resolve => setTimeout(resolve, 2000));
+    }
+  }
 }
 
 await api(`/deposit/depositions/${draft.id}`, { method: 'PUT', body: JSON.stringify({ metadata }) });
