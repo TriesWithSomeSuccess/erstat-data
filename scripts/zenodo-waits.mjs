@@ -40,9 +40,9 @@ const metadata = {
   title: 'Canadian Emergency Department Wait Times (ERstat)',
   creators: [{ name: 'Turnbull, Jason', affiliation: 'ERstat' }],
   description:
-    '<p>Historical emergency department (ED) wait times at Canadian hospitals, compiled by <a href="https://erstat.ca">ERstat</a> from official provincial and regional health-authority feeds. This[...]
-    '<p>Three CSV files (documented in <code>README.md</code>): <code>hospitals.csv</code> &mdash; reference table of the emergency departments; <code>wait_times_hourly.csv</code> &mdash; hourly m[...]
-    '<p>Wait times are estimates (most commonly time-to-physician) and are not medical advice; in an emergency, call 911. Live data and a free API: <a href="https://erstat.ca/data">erstat.ca/data<[...]
+    '<p>Historical emergency department (ED) wait times at Canadian hospitals, compiled by <a href="https://erstat.ca">ERstat</a> from official provincial and regional health-authority feeds.</p>' +
+    '<p>Three CSV files (documented in <code>README.md</code>): <code>hospitals.csv</code> &mdash; reference table of the emergency departments; <code>wait_times_hourly.csv</code> &mdash; hourly measurements; <code>wait_patterns.csv</code> &mdash; aggregate statistics.</p>' +
+    '<p>Wait times are estimates (most commonly time-to-physician) and are not medical advice; in an emergency, call 911. Live data and a free API: <a href="https://erstat.ca/data">erstat.ca/data</a>.</p>',
   license: 'cc-by-nc-4.0',
   keywords: ['emergency department wait times', 'ER wait times', 'Canada', 'hospital wait times', 'emergency medicine', 'health care access', 'real-time health data'],
   version: today,
