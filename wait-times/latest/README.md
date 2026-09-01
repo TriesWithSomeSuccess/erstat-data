@@ -7,7 +7,7 @@ periodic archived snapshot; live, current data is at https://erstat.ca.
 ## Coverage
 
 - **224 emergency departments** across: AB, BC, MB, NB, NS, ON, PE, QC.
-- **2026-03-11 to 2026-08-15** in this snapshot, aggregated from ~7,418,150 point-in-time readings.
+- **2026-03-11 to 2026-09-01** in this snapshot, aggregated from ~8,311,163 point-in-time readings.
 - Provinces/territories without a public live ED wait feed are not represented.
 
 ## Files

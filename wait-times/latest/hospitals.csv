@@ -11,7 +11,7 @@ ab_leduccommunityhospit,Leduc Community Hospital,Leduc,AB,53.254836,-113.545331,
 ab_medicinehatregionalh,Medicine Hat Regional Hospital,Medicine Hat,AB,50.034733,-110.702725,t,ahs,time_to_physician,current_estimate
 ab_misericordiacommunit,Misericordia Community Hospital,Edmonton,AB,53.521028,-113.61232,t,ahs,time_to_physician,current_estimate
 ab_northeastcommunityhe,Northeast Community Health Centre,Edmonton,AB,53.604272,-113.417472,t,ahs,time_to_physician,current_estimate
-ab_northernlightsregion,Northern Lights Regional Health Centre,Fort Mcmurray,AB,56.716352,-111.362239,t,ahs,time_to_physician,current_estimate
+ab_northernlightsregion,Northern Lights Regional Health Centre,Fort McMurray,AB,56.716352,-111.362239,t,ahs,time_to_physician,current_estimate
 ab_okotokshealthwellnes,Okotoks Health and Wellness Centre,Okotoks,AB,50.707604,-113.972141,t,ahs,time_to_physician,current_estimate
 ab_peterlougheedcentre,Peter Lougheed Centre,Calgary,AB,51.078059,-113.98295,t,ahs,time_to_physician,current_estimate
 ab_queenelizabethiihosp,Queen Elizabeth Ii Hospital,Grande Prairie,AB,55.175292,-118.786568,t,ahs,time_to_physician,current_estimate
@@ -80,7 +80,7 @@ ns_cobequidcommunityhe,Cobequid Community Health Centre,Lower Sackville,NS,44.77
 ns_colchesterregionalho,Colchester East Hants Health Centre,Truro,NS,45.357097,-63.292882,t,nshealth,time_to_physician,current_estimate
 ns_cumberlandregionalhe,Cumberland Regional Health Care Centre,Amherst,NS,45.804109,-64.1969,t,nshealth,time_to_physician,ml_prediction
 ns_dartmouthgeneralhosp,Dartmouth General Hospital,Dartmouth,NS,44.653987,-63.547621,t,nshealth,time_to_physician,ml_prediction
-ns_hantscommunityhospit,Hants Community Hospital,Windsor,NS,44.986514,-64.120414,t,nshealth,time_to_physician,ml_prediction
+ns_hantscommunityhospit,Hants Community Hospital,Windsor,NS,44.986514,-64.120414,t,ns_nshealth_llm,time_to_physician,ml_prediction
 ns_invernessconsolidate,Inverness Consolidated Memorial Hospital,Inverness,NS,46.226968,-61.304843,t,nshealth,time_to_physician,ml_prediction
 ns_qeiihalifaxinfirmary,Qeii - Halifax Infirmary Site,Halifax,NS,44.645784,-63.586389,t,nshealth,time_to_physician,ml_prediction
 ns_queensgeneralhospita,Queens General Hospital,Liverpool,NS,44.037653,-64.705594,t,nshealth,time_to_physician,ml_prediction
@@ -146,80 +146,80 @@ pe_kingscountymemorialh,Kings County Memorial Hospital,Montague,PE,46.16934,-62.
 pe_princecountyhospital,Prince County Hospital,Summerside,PE,46.41743,-63.773048,t,pei_health,unknown,current_estimate
 pe_queenelizabethhospit,Queen Elizabeth Hospital,Charlottetown,PE,46.255749,-63.102348,t,pei_health,unknown,current_estimate
 pe_westernhospital,Western Hospital,Alberton,PE,46.81108,-64.066028,t,pei_health,unknown,current_estimate
-qc_centrederadaptatione,"CENTRE DE RÉADAPTATION EN DÉFICIENCE INTELLECTUELLE, TROUBLE DU SPECTRE DE L'AUTISME ET EN DÉFICIENCE PHYSIQUE THÉRÈSE-MARTIN",Rivière-Ouelle,QC,47.455067,-70.000724,t,qc_quebec,time_to_physician,current_estimate
-qc_centrederechercheduc,CENTRE DE RECHERCHE DU CENTRE HOSPITALIER DE L'UNIVERSITÉ DE MONTRÉAL,Montréal,QC,45.510839,-73.555946,t,qc_quebec,time_to_physician,current_estimate
-qc_centredesantdechibou,CENTRE DE SANTÉ DE CHIBOUGAMAU,Chibougamau,QC,49.915951,-74.349183,t,qc_quebec,time_to_physician,current_estimate
-qc_centredesantetdeserv,CENTRE DE SANTÉ ET DE SERVICES SOCIAUX DU HAUT-SAINT-MAURICE,La Tuque,QC,47.428451,-72.785692,t,qc_quebec,time_to_physician,current_estimate
-qc_centredeservicesambu,CENTRE DE SERVICES AMBULATOIRES DE LÉVIS,Lévis,QC,46.81568,-71.174936,t,qc_quebec,time_to_physician,current_estimate
-qc_centredhbergementdel,CENTRE D'HÉBERGEMENT DE L'HÔTEL-DIEU-DE-SAINT-HYACINTHE,Saint-Hyacinthe,QC,45.62572,-72.950032,t,qc_quebec,time_to_physician,current_estimate
-qc_centrehospitalierrob,CENTRE HOSPITALIER ROBERT-GIFFARD,Québec City,QC,46.847932,-71.220726,t,qc_quebec,time_to_physician,current_estimate
-qc_centremultiservicesd,CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE LA MINGANIE,Havre-Saint-Pierre,QC,50.237811,-63.605244,t,qc_quebec,time_to_physician,current_estimate
-qc_chusaintejustine,CHU SAINTE-JUSTINE,Montréal,QC,45.503155,-73.624943,t,qc_quebec,time_to_physician,current_estimate
-qc_chushpitalfleurimont,CHUS - HÔPITAL FLEURIMONT,Sherbrooke,QC,45.447736,-71.869027,t,qc_quebec,time_to_physician,current_estimate
-qc_chushteldieudesherbr,CHUS - HÔTEL-DIEU DE SHERBROOKE,Sherbrooke,QC,45.398442,-71.877948,t,qc_quebec,time_to_physician,current_estimate
-qc_clscdepohenegamook,CLSC DE POHENEGAMOOK,Pohénégamook,QC,47.489759,-69.281334,t,qc_quebec,time_to_physician,current_estimate
-qc_clscethpitalleroyer,CLSC ET HÔPITAL LE ROYER,Baie-Comeau,QC,49.190176,-68.252525,t,qc_quebec,time_to_physician,current_estimate
-qc_groupedemdecinedefam,GROUPE DE MÉDECINE DE FAMILLE UNIVERSITAIRE LAURIER,Québec,QC,46.765936,-71.289344,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalannalaberge,HÔPITAL ANNA-LABERGE,Châteauguay,QC,45.345661,-73.763446,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalbarriemmorial,HÔPITAL BARRIE MÉMORIAL,Ormstown,QC,45.126343,-73.999867,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalbromemissisquo,HÔPITAL BROME-MISSISQUOI-PERKINS,Cowansville,QC,45.207084,-72.714415,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalcharleslemoyne,HÔPITAL CHARLES-LE MOYNE,Longueuil,QC,45.497266,-73.486423,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldalma,HÔPITAL D'ALMA,Alma,QC,48.55062,-71.665075,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldamos,HÔPITAL D'AMOS,Amos,QC,48.574532,-78.125459,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldamqui,HÔPITAL D'AMQUI,Amqui,QC,48.468477,-67.419325,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldechandler,HÔPITAL DE CHANDLER,Chandler,QC,48.354823,-64.67168,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldechicoutimi,HÔPITAL DE CHICOUTIMI,Saguenay,QC,48.425975,-71.048599,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldedolbeaumista,HÔPITAL DE DOLBEAU-MISTASSINI,Dolbeau-Mistassini,QC,48.885835,-72.239367,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldegasp,HÔPITAL DE GASPÉ,Gaspé,QC,48.812942,-64.496646,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldegatineau,HÔPITAL DE GATINEAU,Gatineau,QC,45.493296,-75.691064,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldegranby,HÔPITAL DE GRANBY,Granby,QC,45.410592,-72.722956,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldehull,HÔPITAL DE HULL,Gatineau,QC,45.444873,-75.746033,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldelabaie,HÔPITAL DE LA BAIE,Saguenay,QC,48.343909,-70.883162,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldelachine,HÔPITAL DE LACHINE,Montréal,QC,45.440835,-73.676985,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldelacitdelasan,HÔPITAL DE LA CITÉ-DE-LA-SANTÉ,Laval,QC,45.603319,-73.710819,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldelamalbaie,HÔPITAL DE LA MALBAIE,La Malbaie,QC,47.65619,-70.151741,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldelarchipel,HÔPITAL DE L'ARCHIPEL,Les Îles-De-La-Madeleine,QC,47.375575,-61.868773,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldelasalle,HÔPITAL DE LASALLE,Montréal,QC,45.420839,-73.623371,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldelenfantjsus,HÔPITAL DE L'ENFANT-JÉSUS,Québec City,QC,46.837483,-71.22604,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldemaniwaki,HÔPITAL DE MANIWAKI,Maniwaki,QC,46.39085,-75.979405,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldematane,HÔPITAL DE MATANE,Matane,QC,48.843566,-67.524416,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldemontlaurier,HÔPITAL DE MONT-LAURIER,Mont-Laurier,QC,46.549211,-75.517655,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalderouynnoranda,HÔPITAL DE ROUYN-NORANDA,Rouyn-Noranda,QC,48.243809,-79.019318,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldesainteustach,HÔPITAL DE SAINT-EUSTACHE,Saint-Eustache,QC,45.571266,-73.913739,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldesaintgeorges,HÔPITAL DE SAINT-GEORGES,Saint-Georges,QC,46.109716,-70.685194,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldesaintjrme,HÔPITAL DE SAINT-JÉRÔME,Saint-Jérôme,QC,45.765569,-74.000191,t,qc_quebec,time_to_physician,current_estimate
-qc_hopitaldthetfordmine,Hôpital de Thetford,Thetford Mines,QC,46.1101,-71.2786,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldeverdun,HÔPITAL DE VERDUN,Montréal,QC,45.464098,-73.563989,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalducentredelama,HÔPITAL DU CENTRE-DE-LA-MAURICIE,Shawinigan,QC,46.525584,-72.743393,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalduhautrichelie,HÔPITAL DU HAUT-RICHELIEU,Saint-Jean-Sur-Richelieu,QC,45.332523,-73.270212,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldusacrcurdemon,HÔPITAL DU SACRÉ-CUR DE MONTRÉAL,Montréal,QC,45.532578,-73.714036,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldusaintsacreme,HÔPITAL DU SAINT-SACREMENT,Québec,QC,46.799357,-71.246411,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaldusurot,HÔPITAL DU SUROÎT,Salaberry-De-Valleyfield,QC,45.250926,-74.130708,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalensantmentalea,HÔPITAL EN SANTÉ MENTALE ALBERT-PRÉVOST,Montréal,QC,45.529026,-73.729041,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaletchslddepapin,HÔPITAL ET CHSLD DE PAPINEAU,Gatineau,QC,45.588572,-75.411481,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaletchsldduponti,HÔPITAL ET CHSLD DU PONTIAC,Shawville,QC,45.605968,-76.484009,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaletchsldmmorial,HÔPITAL ET CHSLD MÉMORIAL DE WAKEFIELD / WAKEFIELD MEMORIAL HOSPITAL,La Pêche,QC,45.648575,-75.932482,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaletclscdeseptle,HÔPITAL ET CLSC DE SEPT-ÎLES,Sept-Îles,QC,50.209826,-66.383983,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalfleury,HÔPITAL FLEURY,Montréal,QC,45.57181,-73.650367,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalgnraldemontral,HÔPITAL GÉNÉRAL DE MONTRÉAL,Montréal,QC,45.497046,-73.589036,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalgnraldulakesho,HÔPITAL GÉNÉRAL DU LAKESHORE,Pointe-Claire,QC,45.44855,-73.833668,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalgnraljuif,HÔPITAL GÉNÉRAL JUIF,Montréal,QC,45.495761,-73.630634,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalhonormercier,HÔPITAL HONORÉ-MERCIER,Saint-Hyacinthe,QC,45.634833,-72.959476,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitaljeantalon,HÔPITAL JEAN-TALON,Montréal,QC,45.545943,-73.609538,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalmaisonneuveros,HÔPITAL MAISONNEUVE-ROSEMONT,Montréal,QC,45.574065,-73.559548,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalnotredame,HÔPITAL NOTRE-DAME,Montréal,QC,45.525358,-73.56356,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalpierreboucher,HÔPITAL PIERRE-BOUCHER,Longueuil,QC,45.5383,-73.458792,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalpierrelegardeu,HÔPITAL PIERRE-LE GARDEUR,Terrebonne,QC,45.723978,-73.510536,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalrgionaldeportn,HÔPITAL RÉGIONAL DE PORTNEUF CLSC DE SAINT-RAYMOND,Saint-Raymond,QC,46.894933,-71.822153,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalroyalvictoria,HÔPITAL ROYAL VICTORIA,Montréal,QC,45.5082,-73.581456,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalsaintecroix,HÔPITAL SAINTE-CROIX,Drummondville,QC,45.880009,-72.477304,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalsaintfranoisda,HÔPITAL SAINT-FRANÇOIS DASSISE,Québec,QC,46.827533,-71.236389,t,qc_quebec,time_to_physician,current_estimate
-qc_hpitalsantacabrini,HÔPITAL SANTA CABRINI,Montréal,QC,45.580138,-73.571719,t,qc_quebec,time_to_physician,current_estimate
-qc_hteldieudarthabaska,HÔTEL-DIEU D'ARTHABASKA,Victoriaville,QC,46.040622,-71.914983,t,qc_quebec,time_to_physician,current_estimate
-qc_hteldieudelvis,HÔTEL-DIEU DE LÉVIS,Lévis,QC,46.814863,-71.177405,t,qc_quebec,time_to_physician,current_estimate
-qc_hteldieudemontmagny,HÔTEL-DIEU DE MONTMAGNY,Montmagny,QC,46.976367,-70.597072,t,qc_quebec,time_to_physician,current_estimate
-qc_hteldieudesorel,HÔTEL-DIEU DE SOREL,Sorel-Tracy,QC,46.045811,-73.095633,t,qc_quebec,time_to_physician,current_estimate
-qc_institutdecardiologi,INSTITUT DE CARDIOLOGIE DE MONTRÉAL,Montréal,QC,45.573763,-73.577817,t,qc_quebec,time_to_physician,current_estimate
-qc_institutuniversitair,INSTITUT UNIVERSITAIRE DE GÉRIATRIE DE MONTRÉAL,Montréal,QC,45.491031,-73.623817,t,qc_quebec,time_to_physician,current_estimate
-qc_lhpitaldemontralpour,L'HÔPITAL DE MONTRÉAL POUR ENFANTS,Montréal,QC,45.488959,-73.582312,t,qc_quebec,time_to_physician,current_estimate
-qc_pavillonlhteldieudeq,PAVILLON L'HÔTEL-DIEU DE QUÉBEC,Québec,QC,46.81539,-71.210994,t,qc_quebec,time_to_physician,current_estimate
+qc_centrederadaptatione,"CENTRE DE RÉADAPTATION EN DÉFICIENCE INTELLECTUELLE, TROUBLE DU SPECTRE DE L'AUTISME ET EN DÉFICIENCE PHYSIQUE THÉRÈSE-MARTIN",Rivière-Ouelle,QC,47.455067,-70.000724,t,qc_quebec,total_visit,current_estimate
+qc_centrederechercheduc,CENTRE DE RECHERCHE DU CENTRE HOSPITALIER DE L'UNIVERSITÉ DE MONTRÉAL,Montréal,QC,45.510839,-73.555946,t,qc_quebec,total_visit,current_estimate
+qc_centredesantdechibou,CENTRE DE SANTÉ DE CHIBOUGAMAU,Chibougamau,QC,49.915951,-74.349183,t,qc_quebec,total_visit,current_estimate
+qc_centredesantetdeserv,CENTRE DE SANTÉ ET DE SERVICES SOCIAUX DU HAUT-SAINT-MAURICE,La Tuque,QC,47.428451,-72.785692,t,qc_quebec,total_visit,current_estimate
+qc_centredeservicesambu,CENTRE DE SERVICES AMBULATOIRES DE LÉVIS,Lévis,QC,46.81568,-71.174936,t,qc_quebec,total_visit,current_estimate
+qc_centredhbergementdel,CENTRE D'HÉBERGEMENT DE L'HÔTEL-DIEU-DE-SAINT-HYACINTHE,Saint-Hyacinthe,QC,45.62572,-72.950032,t,qc_quebec,total_visit,current_estimate
+qc_centrehospitalierrob,CENTRE HOSPITALIER ROBERT-GIFFARD,Québec City,QC,46.847932,-71.220726,t,qc_quebec,total_visit,current_estimate
+qc_centremultiservicesd,CENTRE MULTISERVICES DE SANTÉ ET DE SERVICES SOCIAUX DE LA MINGANIE,Havre-Saint-Pierre,QC,50.237811,-63.605244,t,qc_quebec,total_visit,current_estimate
+qc_chusaintejustine,CHU SAINTE-JUSTINE,Montréal,QC,45.503155,-73.624943,t,qc_quebec,total_visit,current_estimate
+qc_chushpitalfleurimont,CHUS - HÔPITAL FLEURIMONT,Sherbrooke,QC,45.447736,-71.869027,t,qc_quebec,total_visit,current_estimate
+qc_chushteldieudesherbr,CHUS - HÔTEL-DIEU DE SHERBROOKE,Sherbrooke,QC,45.398442,-71.877948,t,qc_quebec,total_visit,current_estimate
+qc_clscdepohenegamook,CLSC DE POHENEGAMOOK,Pohénégamook,QC,47.489759,-69.281334,t,qc_quebec,total_visit,current_estimate
+qc_clscethpitalleroyer,CLSC ET HÔPITAL LE ROYER,Baie-Comeau,QC,49.190176,-68.252525,t,qc_quebec,total_visit,current_estimate
+qc_groupedemdecinedefam,GROUPE DE MÉDECINE DE FAMILLE UNIVERSITAIRE LAURIER,Québec,QC,46.765936,-71.289344,t,qc_quebec,total_visit,current_estimate
+qc_hpitalannalaberge,HÔPITAL ANNA-LABERGE,Châteauguay,QC,45.345661,-73.763446,t,qc_quebec,total_visit,current_estimate
+qc_hpitalbarriemmorial,HÔPITAL BARRIE MÉMORIAL,Ormstown,QC,45.126343,-73.999867,t,qc_quebec,total_visit,current_estimate
+qc_hpitalbromemissisquo,HÔPITAL BROME-MISSISQUOI-PERKINS,Cowansville,QC,45.207084,-72.714415,t,qc_quebec,total_visit,current_estimate
+qc_hpitalcharleslemoyne,HÔPITAL CHARLES-LE MOYNE,Longueuil,QC,45.497266,-73.486423,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldalma,HÔPITAL D'ALMA,Alma,QC,48.55062,-71.665075,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldamos,HÔPITAL D'AMOS,Amos,QC,48.574532,-78.125459,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldamqui,HÔPITAL D'AMQUI,Amqui,QC,48.468477,-67.419325,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldechandler,HÔPITAL DE CHANDLER,Chandler,QC,48.354823,-64.67168,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldechicoutimi,HÔPITAL DE CHICOUTIMI,Saguenay,QC,48.425975,-71.048599,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldedolbeaumista,HÔPITAL DE DOLBEAU-MISTASSINI,Dolbeau-Mistassini,QC,48.885835,-72.239367,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldegasp,HÔPITAL DE GASPÉ,Gaspé,QC,48.812942,-64.496646,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldegatineau,HÔPITAL DE GATINEAU,Gatineau,QC,45.493296,-75.691064,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldegranby,HÔPITAL DE GRANBY,Granby,QC,45.410592,-72.722956,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldehull,HÔPITAL DE HULL,Gatineau,QC,45.444873,-75.746033,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldelabaie,HÔPITAL DE LA BAIE,Saguenay,QC,48.343909,-70.883162,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldelachine,HÔPITAL DE LACHINE,Montréal,QC,45.440835,-73.676985,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldelacitdelasan,HÔPITAL DE LA CITÉ-DE-LA-SANTÉ,Laval,QC,45.603319,-73.710819,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldelamalbaie,HÔPITAL DE LA MALBAIE,La Malbaie,QC,47.65619,-70.151741,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldelarchipel,HÔPITAL DE L'ARCHIPEL,Les Îles-De-La-Madeleine,QC,47.375575,-61.868773,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldelasalle,HÔPITAL DE LASALLE,Montréal,QC,45.420839,-73.623371,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldelenfantjsus,HÔPITAL DE L'ENFANT-JÉSUS,Québec City,QC,46.837483,-71.22604,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldemaniwaki,HÔPITAL DE MANIWAKI,Maniwaki,QC,46.39085,-75.979405,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldematane,HÔPITAL DE MATANE,Matane,QC,48.843566,-67.524416,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldemontlaurier,HÔPITAL DE MONT-LAURIER,Mont-Laurier,QC,46.549211,-75.517655,t,qc_quebec,total_visit,current_estimate
+qc_hpitalderouynnoranda,HÔPITAL DE ROUYN-NORANDA,Rouyn-Noranda,QC,48.243809,-79.019318,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldesainteustach,HÔPITAL DE SAINT-EUSTACHE,Saint-Eustache,QC,45.571266,-73.913739,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldesaintgeorges,HÔPITAL DE SAINT-GEORGES,Saint-Georges,QC,46.109716,-70.685194,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldesaintjrme,HÔPITAL DE SAINT-JÉRÔME,Saint-Jérôme,QC,45.765569,-74.000191,t,qc_quebec,total_visit,current_estimate
+qc_hopitaldthetfordmine,Hôpital de Thetford,Thetford Mines,QC,46.1101,-71.2786,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldeverdun,HÔPITAL DE VERDUN,Montréal,QC,45.464098,-73.563989,t,qc_quebec,total_visit,current_estimate
+qc_hpitalducentredelama,HÔPITAL DU CENTRE-DE-LA-MAURICIE,Shawinigan,QC,46.525584,-72.743393,t,qc_quebec,total_visit,current_estimate
+qc_hpitalduhautrichelie,HÔPITAL DU HAUT-RICHELIEU,Saint-Jean-Sur-Richelieu,QC,45.332523,-73.270212,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldusacrcurdemon,HÔPITAL DU SACRÉ-CUR DE MONTRÉAL,Montréal,QC,45.532578,-73.714036,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldusaintsacreme,HÔPITAL DU SAINT-SACREMENT,Québec,QC,46.799357,-71.246411,t,qc_quebec,total_visit,current_estimate
+qc_hpitaldusurot,HÔPITAL DU SUROÎT,Salaberry-De-Valleyfield,QC,45.250926,-74.130708,t,qc_quebec,total_visit,current_estimate
+qc_hpitalensantmentalea,HÔPITAL EN SANTÉ MENTALE ALBERT-PRÉVOST,Montréal,QC,45.529026,-73.729041,t,qc_quebec,total_visit,current_estimate
+qc_hpitaletchslddepapin,HÔPITAL ET CHSLD DE PAPINEAU,Gatineau,QC,45.588572,-75.411481,t,qc_quebec,total_visit,current_estimate
+qc_hpitaletchsldduponti,HÔPITAL ET CHSLD DU PONTIAC,Shawville,QC,45.605968,-76.484009,t,qc_quebec,total_visit,current_estimate
+qc_hpitaletchsldmmorial,HÔPITAL ET CHSLD MÉMORIAL DE WAKEFIELD / WAKEFIELD MEMORIAL HOSPITAL,La Pêche,QC,45.648575,-75.932482,t,qc_quebec,total_visit,current_estimate
+qc_hpitaletclscdeseptle,HÔPITAL ET CLSC DE SEPT-ÎLES,Sept-Îles,QC,50.209826,-66.383983,t,qc_quebec,total_visit,current_estimate
+qc_hpitalfleury,HÔPITAL FLEURY,Montréal,QC,45.57181,-73.650367,t,qc_quebec,total_visit,current_estimate
+qc_hpitalgnraldemontral,HÔPITAL GÉNÉRAL DE MONTRÉAL,Montréal,QC,45.497046,-73.589036,t,qc_quebec,total_visit,current_estimate
+qc_hpitalgnraldulakesho,HÔPITAL GÉNÉRAL DU LAKESHORE,Pointe-Claire,QC,45.44855,-73.833668,t,qc_quebec,total_visit,current_estimate
+qc_hpitalgnraljuif,HÔPITAL GÉNÉRAL JUIF,Montréal,QC,45.495761,-73.630634,t,qc_quebec,total_visit,current_estimate
+qc_hpitalhonormercier,HÔPITAL HONORÉ-MERCIER,Saint-Hyacinthe,QC,45.634833,-72.959476,t,qc_quebec,total_visit,current_estimate
+qc_hpitaljeantalon,HÔPITAL JEAN-TALON,Montréal,QC,45.545943,-73.609538,t,qc_quebec,total_visit,current_estimate
+qc_hpitalmaisonneuveros,HÔPITAL MAISONNEUVE-ROSEMONT,Montréal,QC,45.574065,-73.559548,t,qc_quebec,total_visit,current_estimate
+qc_hpitalnotredame,HÔPITAL NOTRE-DAME,Montréal,QC,45.525358,-73.56356,t,qc_quebec,total_visit,current_estimate
+qc_hpitalpierreboucher,HÔPITAL PIERRE-BOUCHER,Longueuil,QC,45.5383,-73.458792,t,qc_quebec,total_visit,current_estimate
+qc_hpitalpierrelegardeu,HÔPITAL PIERRE-LE GARDEUR,Terrebonne,QC,45.723978,-73.510536,t,qc_quebec,total_visit,current_estimate
+qc_hpitalrgionaldeportn,HÔPITAL RÉGIONAL DE PORTNEUF CLSC DE SAINT-RAYMOND,Saint-Raymond,QC,46.894933,-71.822153,t,qc_quebec,total_visit,current_estimate
+qc_hpitalroyalvictoria,HÔPITAL ROYAL VICTORIA,Montréal,QC,45.5082,-73.581456,t,qc_quebec,total_visit,current_estimate
+qc_hpitalsaintecroix,HÔPITAL SAINTE-CROIX,Drummondville,QC,45.880009,-72.477304,t,qc_quebec,total_visit,current_estimate
+qc_hpitalsaintfranoisda,HÔPITAL SAINT-FRANÇOIS DASSISE,Québec,QC,46.827533,-71.236389,t,qc_quebec,total_visit,current_estimate
+qc_hpitalsantacabrini,HÔPITAL SANTA CABRINI,Montréal,QC,45.580138,-73.571719,t,qc_quebec,total_visit,current_estimate
+qc_hteldieudarthabaska,HÔTEL-DIEU D'ARTHABASKA,Victoriaville,QC,46.040622,-71.914983,t,qc_quebec,total_visit,current_estimate
+qc_hteldieudelvis,HÔTEL-DIEU DE LÉVIS,Lévis,QC,46.814863,-71.177405,t,qc_quebec,total_visit,current_estimate
+qc_hteldieudemontmagny,HÔTEL-DIEU DE MONTMAGNY,Montmagny,QC,46.976367,-70.597072,t,qc_quebec,total_visit,current_estimate
+qc_hteldieudesorel,HÔTEL-DIEU DE SOREL,Sorel-Tracy,QC,46.045811,-73.095633,t,qc_quebec,total_visit,current_estimate
+qc_institutdecardiologi,INSTITUT DE CARDIOLOGIE DE MONTRÉAL,Montréal,QC,45.573763,-73.577817,t,qc_quebec,total_visit,current_estimate
+qc_institutuniversitair,INSTITUT UNIVERSITAIRE DE GÉRIATRIE DE MONTRÉAL,Montréal,QC,45.491031,-73.623817,t,qc_quebec,total_visit,current_estimate
+qc_lhpitaldemontralpour,L'HÔPITAL DE MONTRÉAL POUR ENFANTS,Montréal,QC,45.488959,-73.582312,t,qc_quebec,total_visit,current_estimate
+qc_pavillonlhteldieudeq,PAVILLON L'HÔTEL-DIEU DE QUÉBEC,Québec,QC,46.81539,-71.210994,t,qc_quebec,total_visit,current_estimate
