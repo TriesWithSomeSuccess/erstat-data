@@ -59,12 +59,18 @@ if (!CONCEPT) {
   draft = await api('/deposit/depositions', { method: 'POST', body: '{}' });
 } else {
   const list = await api(`/deposit/depositions?q=conceptrecid:${CONCEPT}&status=published&sort=mostrecent&size=1`);
-  if (!list.length) throw new Error(`No published deposition found for concept ${CONCEPT}`);
-  const nv = await api(`/deposit/depositions/${list[0].id}/actions/newversion`, { method: 'POST' });
-  const draftId = nv.links.latest_draft.split('/').pop();
-  draft = await api(`/deposit/depositions/${draftId}`);
-  for (const f of draft.files || []) {
-    await apiWithRetry(`/deposit/depositions/${draft.id}/files/${f.id}`, { method: 'DELETE' });
+  if (!list.length) {
+    console.log(`No published deposition found for concept ${CONCEPT}, creating new one`);
+    draft = await api('/deposit/depositions', { method: 'POST', body: '{}' });
+  } else {
+    try {
+      const nv = await apiWithRetry(`/deposit/depositions/${list[0].id}/actions/newversion`, { method: 'POST' });
+      const draftId = nv.links.latest_draft.split('/').pop();
+      draft = await api(`/deposit/depositions/${draftId}`);
+    } catch (error) {
+      console.log(`Failed to create new version: ${error.message}. Creating new deposition instead.`);
+      draft = await api('/deposit/depositions', { method: 'POST', body: '{}' });
+    }
   }
 }
 
