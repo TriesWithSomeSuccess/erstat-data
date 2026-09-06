@@ -1,0 +1,33 @@
+name: Publish forecast-accuracy to Zenodo
+
+# Hetzner regenerates the forecast-accuracy snapshot from Timescale and pushes it
+# to forecast-accuracy/latest/ (it cannot run a GitHub Action because Timescale
+# is behind Tailscale). That push fires this job.
+#
+# ZENODO_CONCEPT_RECID is EMPTY on purpose. With no concept id the publish script
+# creates a brand new Zenodo record, which is what should happen exactly once,
+# for the first version. Take the concept recid Zenodo returns, paste it here,
+# and every later push becomes a new version of that same record rather than a
+# new record every month. Until that is done, DO NOT let the monthly cron run.
+on:
+  push:
+    paths:
+      - 'forecast-accuracy/latest/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Publish new version to Zenodo
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          ZENODO_CONCEPT_RECID: ""
+        run: node scripts/zenodo-accuracy.mjs
