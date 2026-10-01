@@ -1,9 +1,15 @@
 name: Monthly snapshot
 
-# Pulls the monthly snapshot and commits it. It does NOT publish to Zenodo:
-# Zenodo WAF answers these shared runner IPs with 403 and "unusual traffic from
-# your network", which no amount of retrying fixes. Hetzner publishes instead,
-# from publish-zenodo.sh in the repo root, at 10:30 UTC on the 1st.
+# Pulls the monthly snapshot and commits it. It does NOT publish to Zenodo;
+# Hetzner does that, from publish-zenodo.sh in the repo root, at 10:30 UTC on the
+# 1st, where the data is generated anyway.
+#
+# An earlier version of this comment blamed the publish failures on these shared
+# runner IPs, because Zenodo WAF says "unusual traffic from your network". That
+# was wrong. The WAF refuses two User-Agents, a missing one and the literal
+# string "node", and Node's built-in fetch sends "node". Runner IPs were never
+# the problem, so do not move the publish back here expecting that to fix
+# anything -- the header in scripts/zenodo.mjs is what matters.
 
 on:
   schedule:
