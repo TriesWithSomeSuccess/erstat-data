@@ -1,5 +1,10 @@
 name: Monthly snapshot
 
+# Pulls the monthly snapshot and commits it. It does NOT publish to Zenodo:
+# Zenodo WAF answers these shared runner IPs with 403 and "unusual traffic from
+# your network", which no amount of retrying fixes. Hetzner publishes instead,
+# from publish-zenodo.sh in the repo root, at 10:30 UTC on the 1st.
+
 on:
   schedule:
     - cron: "17 9 1 * *"
@@ -27,8 +32,3 @@ jobs:
           git add data latest
           git diff --cached --quiet || git commit -m "snapshot: $(date -u +%Y-%m-%d)"
           git push
-      - name: Publish new version to Zenodo
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-          ZENODO_CONCEPT_RECID: "21853002"
-        run: node scripts/zenodo.mjs
