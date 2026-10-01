@@ -31,16 +31,55 @@ ACCURACY_CONCEPT=""
 echo "Pulling the latest snapshot commit..."
 git pull -q --rebase origin main
 
+# Refuse to publish stale inputs. The closures snapshot is pulled and committed by
+# a GitHub Action at 09:17 UTC; this runs at 10:30. If that job failed or ran late
+# a plain pull leaves last month in place, and we would republish it stamped with
+# this month version -- wrong data, silently, which is the failure mode this whole
+# cleanup exists to stop. A published Zenodo version cannot be withdrawn, so the
+# check goes before the upload, not after.
+THIS_MONTH=$(date -u +%Y-%m)
+check_fresh() {
+  local label="$1" file="$2" col="$3" newest
+  if [ ! -f "$file" ]; then
+    echo "MISSING: $file ($label). Refusing to publish." >&2
+    return 1
+  fi
+  newest=$(tail -n +2 "$file" | cut -d, -f"$col" | sort | tail -1 | cut -c1-7)
+  if [ "$newest" != "$THIS_MONTH" ]; then
+    echo "STALE: $label newest row is $newest, expected $THIS_MONTH ($file)." >&2
+    echo "Refusing to publish: a Zenodo version cannot be withdrawn once out." >&2
+    echo "Check whether the snapshot job ran, then re-run this script." >&2
+    return 1
+  fi
+  echo "  $label is current ($newest)"
+}
+
 run() {
   echo
   echo "=== $1 (concept ${2:-NEW RECORD}) ==="
   ZENODO_TOKEN="$ZENODO_TOKEN" ZENODO_CONCEPT_RECID="$2" node "scripts/$3"
 }
 
+check_closures() { check_fresh "closures snapshot" latest/closures.csv 1; }
+# The hourly export is gzipped, so this reads the last hour out of the stream
+# rather than loading 1.7M rows; the file is sorted by hospital then hour, so
+# the newest hour is not the last line and has to be scanned for.
+check_waits() {
+  local newest
+  newest=$(zcat wait-times/latest/wait_times_hourly.csv.gz | tail -n +2 | cut -d, -f2 | sort | tail -1 | cut -c1-7)
+  if [ "$newest" != "$THIS_MONTH" ]; then
+    echo "STALE: wait-times export newest hour is $newest, expected $THIS_MONTH." >&2
+    echo "Refusing to publish. Check the Timescale export (09:20 UTC cron)." >&2
+    return 1
+  fi
+  echo "  wait-times export is current ($newest)"
+}
+
 case "${1:-all}" in
-  closures) run closures     "$CLOSURES_CONCEPT" zenodo.mjs ;;
-  waits)    run "wait times" "$WAITS_CONCEPT"    zenodo-waits.mjs ;;
-  all)      run closures     "$CLOSURES_CONCEPT" zenodo.mjs
+  closures) check_closures; run closures     "$CLOSURES_CONCEPT" zenodo.mjs ;;
+  waits)    check_waits;    run "wait times" "$WAITS_CONCEPT"    zenodo-waits.mjs ;;
+  all)      check_closures; check_waits
+            run closures     "$CLOSURES_CONCEPT" zenodo.mjs
             run "wait times" "$WAITS_CONCEPT"    zenodo-waits.mjs ;;
   accuracy)
     if [ "${2:-}" = "--first-version" ]; then
