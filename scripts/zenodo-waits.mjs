@@ -116,8 +116,8 @@ for (const [srcPath, name, gz] of uploads) {
   }
 }
 
-await api(`/deposit/depositions/${draft.id}`, { method: 'PUT', body: JSON.stringify({ metadata }) });
-const pub = await api(`/deposit/depositions/${draft.id}/actions/publish`, { method: 'POST' });
+await apiWithRetry(`/deposit/depositions/${draft.id}`, { method: 'PUT', body: JSON.stringify({ metadata }) });
+const pub = await apiWithRetry(`/deposit/depositions/${draft.id}/actions/publish`, { method: 'POST' });
 
 console.log(`Published: ${pub.links.record_html}`);
 console.log(`DOI: ${pub.doi}`);

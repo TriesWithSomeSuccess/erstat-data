@@ -3,7 +3,7 @@
 // prints the concept recid to wire into the workflow. Later runs: creates a
 // new version of that concept with fresh files.
 // Usage: ZENODO_TOKEN=... [ZENODO_CONCEPT_RECID=...] node scripts/zenodo.mjs
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 
 const TOKEN = process.env.ZENODO_TOKEN;
 if (!TOKEN) { console.error('ZENODO_TOKEN is not set.'); process.exit(1); }
@@ -44,7 +44,7 @@ const metadata = {
   creators: [{ name: 'Turnbull, Jason', affiliation: 'ERstat' }],
   description:
     '<p>Point-in-time records of Canadian emergency-room closures, reopenings and service disruptions, collected continuously by <a href="https://erstat.ca">ERstat</a> from official health-authority sources across all provinces and territories.</p>' +
-    '<p><code>closures.csv</code>: every ER closed or on reduced service at snapshot time, with status message and expected reopening where published. <code>coverage.csv</code>: per-province ER counts and data freshness. Canonical dataset page (access, formats, citations): <a href="https://erstat.ca/data">erstat.ca/data</a>. Live JSON API with a free key: <a href="https://erstat.ca/developers">erstat.ca/developers</a>.</p>' +
+    '<p><code>closures.csv</code>: every ER closed or on reduced service at snapshot time, with status message and expected reopening where published. <code>coverage.csv</code>: per-province ER counts and data freshness. <code>closures_history.csv</code> and <code>coverage_history.csv</code>: every monthly snapshot to date concatenated, so this one version carries the full series. Canonical dataset page (access, formats, citations): <a href="https://erstat.ca/data">erstat.ca/data</a>. Live JSON API with a free key: <a href="https://erstat.ca/developers">erstat.ca/developers</a>.</p>' +
     '<p>Free for non-commercial use with attribution (a visible link to erstat.ca). Full event-level history, wait-time time series, bulk export and commercial use are available under a separate license.</p>',
   license: 'cc-by-nc-4.0',
   keywords: ['emergency room closures', 'ER wait times', 'Canada', 'hospital closures', 'emergency department', 'health care access', 'service disruptions'],
@@ -81,8 +81,37 @@ if (!CONCEPT) {
   }
 }
 
+
+// Each published version of this dataset is a point-in-time snapshot, so a
+// reader who lands on one version sees one month. These two files carry the
+// whole series, making any single version self-contained -- which also means a
+// month that never made it into this concept (September 2026, published under a
+// forked DOI) is still recoverable from the latest record.
+function buildHistory(kind) {
+  const base = 'data/snapshots';
+  const dirs = readdirSync(base).filter(d => /^\d{4}-\d{2}-\d{2}$/.test(d)).sort();
+  let header = null;
+  const rows = [];
+  for (const dir of dirs) {
+    const file = `${base}/${dir}/${kind}.csv`;
+    if (!existsSync(file)) continue;
+    const lines = readFileSync(file, 'utf8').trim().split('\n');
+    if (!lines.length) continue;
+    if (header === null) header = lines[0];
+    else if (lines[0] !== header) throw new Error(`${file} header differs from ${dirs[0]}; refusing to concatenate mismatched schemas`);
+    rows.push(...lines.slice(1));
+  }
+  if (header === null) throw new Error(`no ${kind}.csv snapshots found under ${base}`);
+  const out = `latest/${kind}_history.csv`;
+  writeFileSync(out, header + '\n' + rows.join('\n') + '\n');
+  console.log(`Built ${out}: ${rows.length} rows across ${dirs.length} snapshots`);
+  return out;
+}
+
+const history = [buildHistory('closures'), buildHistory('coverage')];
+
 const bucket = draft.links.bucket;
-for (const file of ['latest/closures.csv', 'latest/coverage.csv', 'README.md']) {
+for (const file of ['latest/closures.csv', 'latest/coverage.csv', ...history, 'README.md']) {
   const name = file.split('/').pop();
   let uploaded = false;
   for (let attempt = 0; attempt < 3; attempt++) {
@@ -105,8 +134,8 @@ for (const file of ['latest/closures.csv', 'latest/coverage.csv', 'README.md']) 
   }
 }
 
-await api(`/deposit/depositions/${draft.id}`, { method: 'PUT', body: JSON.stringify({ metadata }) });
-const pub = await api(`/deposit/depositions/${draft.id}/actions/publish`, { method: 'POST' });
+await apiWithRetry(`/deposit/depositions/${draft.id}`, { method: 'PUT', body: JSON.stringify({ metadata }) });
+const pub = await apiWithRetry(`/deposit/depositions/${draft.id}/actions/publish`, { method: 'POST' });
 
 console.log(`Published: ${pub.links.record_html}`);
 console.log(`DOI: ${pub.doi}`);
