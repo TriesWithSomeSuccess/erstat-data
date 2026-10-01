@@ -10,10 +10,18 @@ if (!TOKEN) { console.error('ZENODO_TOKEN is not set.'); process.exit(1); }
 const CONCEPT = process.env.ZENODO_CONCEPT_RECID || '';
 const BASE = 'https://zenodo.org/api';
 
+// Zenodo's WAF 403s two User-Agents: a missing one, and the literal string
+// "node", which is exactly what Node's built-in fetch sends. Every other UA
+// tested (curl, undici, python-requests, this one) is served normally. That
+// rule is what broke the 2026-10-01 publish, and what forked the DOI lineage
+// on 2026-09-01 back when a failed lookup fell through to creating a record.
+// So this header is load-bearing, not cosmetic.
+const UA = 'erstat-data/1.0 (+https://erstat.ca; dataset publisher)';
+
 async function api(path, opts = {}) {
   const res = await fetch(`${BASE}${path}`, {
     ...opts,
-    headers: { Authorization: `Bearer ${TOKEN}`, ...(opts.body && typeof opts.body === 'string' ? { 'Content-Type': 'application/json' } : {}), ...opts.headers },
+    headers: { Authorization: `Bearer ${TOKEN}`, 'User-Agent': UA, ...(opts.body && typeof opts.body === 'string' ? { 'Content-Type': 'application/json' } : {}), ...opts.headers },
   });
   if (!res.ok) throw new Error(`${opts.method || 'GET'} ${path} -> HTTP ${res.status}: ${await res.text()}`);
   return res.status === 204 ? null : res.json();
@@ -100,7 +108,7 @@ for (const [srcPath, name, gz] of uploads) {
     try {
       const res = await fetch(`${bucket}/${name}`, {
         method: 'PUT',
-        headers: { Authorization: `Bearer ${TOKEN}`, 'Content-Type': 'application/octet-stream' },
+        headers: { Authorization: `Bearer ${TOKEN}`, 'User-Agent': UA, 'Content-Type': 'application/octet-stream' },
         body,
         signal: AbortSignal.timeout(180000), // 3 minute timeout per upload
       });
