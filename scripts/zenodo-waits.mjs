@@ -19,15 +19,18 @@ async function api(path, opts = {}) {
   return res.status === 204 ? null : res.json();
 }
 
-async function apiWithRetry(path, opts = {}, maxRetries = 3) {
+async function apiWithRetry(path, opts = {}, maxRetries = 4) {
   for (let attempt = 0; attempt < maxRetries; attempt++) {
     try {
       return await api(path, opts);
     } catch (error) {
       if (attempt === maxRetries - 1) throw error;
-      // Exponential backoff: 2s, 4s, 8s
-      const delay = Math.pow(2, attempt + 1) * 1000;
-      console.log(`Retry attempt ${attempt + 1}/${maxRetries - 1} after ${delay}ms: ${error.message}`);
+      // Zenodo's WAF answers a blocked IP with 403 and an HTML body ("unusual
+      // traffic from your network"). That is a property of the network, not the
+      // request, so it wants a longer wait than an ordinary transient error.
+      const blocked = /HTTP 403|HTTP 429|HTTP 50\d/.test(error.message);
+      const delay = blocked ? 30000 * (attempt + 1) : Math.pow(2, attempt + 1) * 1000;
+      console.log(`Retry ${attempt + 1}/${maxRetries - 1} in ${delay / 1000}s: ${error.message.slice(0, 160)}`);
       await new Promise(resolve => setTimeout(resolve, delay));
     }
   }
@@ -56,21 +59,29 @@ const metadata = {
 
 let draft;
 if (!CONCEPT) {
-  draft = await api('/deposit/depositions', { method: 'POST', body: '{}' });
+  draft = await apiWithRetry('/deposit/depositions', { method: 'POST', body: '{}' });
 } else {
-  const list = await api(`/deposit/depositions?q=conceptrecid:${CONCEPT}&status=published&sort=mostrecent&size=1`);
+  // NO FALLBACK TO A NEW DEPOSITION. This used to create one whenever the
+  // lookup came back empty or the newversion call failed, which turned any
+  // transient error into a permanent split in the DOI lineage. It did exactly
+  // that on 2026-09-01: both datasets silently acquired a second concept DOI,
+  // so the concept everyone cites stopped resolving to the latest version and
+  // nobody noticed for a month. A failed publish is recoverable; a forked DOI
+  // is forever. Fail loudly instead.
+  const list = await apiWithRetry(`/deposit/depositions?q=conceptrecid:${CONCEPT}&status=published&sort=mostrecent&size=1`);
   if (!list.length) {
-    console.log(`No published deposition found for concept ${CONCEPT}, creating new one`);
-    draft = await api('/deposit/depositions', { method: 'POST', body: '{}' });
-  } else {
-    try {
-      const nv = await apiWithRetry(`/deposit/depositions/${list[0].id}/actions/newversion`, { method: 'POST' });
-      const draftId = nv.links.latest_draft.split('/').pop();
-      draft = await api(`/deposit/depositions/${draftId}`);
-    } catch (error) {
-      console.log(`Failed to create new version: ${error.message}. Creating new deposition instead.`);
-      draft = await api('/deposit/depositions', { method: 'POST', body: '{}' });
-    }
+    throw new Error(`No published deposition found for concept ${CONCEPT}. Refusing to create a new record: that would fork the DOI lineage. Check ZENODO_CONCEPT_RECID and that the token owns this record.`);
+  }
+  const nv = await apiWithRetry(`/deposit/depositions/${list[0].id}/actions/newversion`, { method: 'POST' });
+  const draftId = nv.links.latest_draft.split('/').pop();
+  draft = await apiWithRetry(`/deposit/depositions/${draftId}`);
+  for (const f of draft.files || []) {
+    await apiWithRetry(`/deposit/depositions/${draft.id}/files/${f.id}`, { method: 'DELETE' });
+  }
+  // Belt and braces: whatever happened above, we are about to publish. Prove it
+  // lands in the concept we were told to extend.
+  if (String(draft.conceptrecid) !== String(CONCEPT)) {
+    throw new Error(`Draft ${draft.id} belongs to concept ${draft.conceptrecid}, expected ${CONCEPT}. Refusing to publish.`);
   }
 }
 
