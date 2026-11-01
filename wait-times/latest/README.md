@@ -8,10 +8,10 @@ live, current data is at https://erstat.ca.
 
 ## Coverage
 
-- **652 emergency departments** across: AB, BC, MB, NB, NL, NS, NT, NU, ON, PE, QC, SK, YT.
-- **281** of them publish a wait time themselves. **599** carry an ERstat
+- **653 emergency departments** across: AB, BC, MB, NB, NL, NS, NT, NU, ON, PE, QC, SK, YT.
+- **283** of them publish a wait time themselves. **599** carry an ERstat
   figure, including EDs that publish nothing at all.
-- **2026-03-11 to 2026-10-01** in this snapshot, aggregated from ~10,337,092 point-in-time readings.
+- **2026-03-11 to 2026-11-01** in this snapshot, aggregated from ~12,389,220 point-in-time readings.
 - A province with no public live feed can still appear here, because the ERstat
   figure does not depend on one. Where neither exists, the ED is absent.
 
